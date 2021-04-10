@@ -1,0 +1,42 @@
+@mixin hover-opacity {
+    &:hover, &:focus {
+        opacity: .8;
+    }
+}
+
+@mixin overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    opacity: $opacity-overlay;
+    background-color: $jet-color;
+    z-index: $z-index-overlay;
+    cursor: pointer;
+}
+
+@mixin container {
+    margin: 0 20px;
+}
+
+@mixin input-container($class-name) {
+    .#{$class-name}-container {
+        margin: 20px;
+        font-size: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .#{$class-name}-input {
+            padding: 10px;
+            font-size: 20px;;
+            text-align: center;
+            border: none;
+            color: $jet-color;
+            border-bottom: 1px solid $jet-color;
+            &:focus {
+                box-shadow: 1px 7px 20px -17px $eminence-color;
+            }
+        }
+    }
+}
